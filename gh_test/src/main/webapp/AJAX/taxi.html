@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function(){
+		$("#btnCount").click(function(){
+			var distance = $("#distance").val();
+			
+			if(distance == ""){
+				alert("거리를 입력하세요");
+				$("$distance").focus();
+				return;
+			}
+			
+			$.ajax({
+				url:"taxi_count.jsp",
+				data:{"distance":distance},
+				success: function(txt){
+					$("#count_area").html(txt);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	운행거리(km) <input type="text" id="distance">
+	<input type="button" onclick="tcount()" id ="btnCount" value="계산"><br><br>
+	<div id="count_area"></div>
+</body>
+</html>
