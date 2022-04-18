@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>한줄 메모장(수정)</h2>
+	<h2>한줄 메모장(이수정)</h2>
 	<form method="post" action="insert.jsp">
 		이름 <input type="text" name="writer" size="10">
 		메모 <input type="text" name="memo" size="30">
